@@ -5,7 +5,7 @@ import (
 	"reflect"
 )
 
-// BSTree ...
+// BSTree Binary Search Tree
 type BSTree struct {
 	key   interface{}
 	value interface{}
@@ -14,7 +14,7 @@ type BSTree struct {
 	right *BSTree
 }
 
-// NewBSTree ...
+// NewBSTree Initiates Binary Search Tree
 func NewBSTree() *BSTree {
 	b := &BSTree{
 		left:  &BSTree{},

@@ -127,6 +127,13 @@ func (l *List) GetFirstNode() *Node {
 	return l.top
 }
 
+// RemoveAll ...
+func (l *List) RemoveAll() {
+	for l.GetFirstNode() != nil {
+		l.RemoveLastNode()
+	}
+}
+
 // RemoveLastNode ...
 func (l *List) RemoveLastNode() {
 	if l.last == nil {

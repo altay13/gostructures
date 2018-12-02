@@ -3,7 +3,7 @@ package set
 import "testing"
 
 func TestSetAddRemove(t *testing.T) {
-	s := newSet(10)
+	s := NewSet(10)
 
 	s.Add(1)
 	s.Add(2)
@@ -22,7 +22,7 @@ func TestSetAddRemove(t *testing.T) {
 }
 
 func TestSetContains(t *testing.T) {
-	s := newSet(10)
+	s := NewSet(10)
 
 	s.Add(10)
 	s.Add(2)

@@ -24,6 +24,7 @@ func NewQueue() *Queue {
 	return q
 }
 
+// SetSize ...
 func (q *Queue) SetSize(size int) error {
 	if q.size != 0 {
 		return fmt.Errorf("[ ERR ] Queue is not empty. To set the size, queue should be empty.")
@@ -31,6 +32,19 @@ func (q *Queue) SetSize(size int) error {
 
 	q.maxSize = size
 	return nil
+}
+
+// IsEmpty ...
+func (q *Queue) IsEmpty() bool {
+	if q.list.GetLastNode() == nil {
+		return true
+	}
+	return false
+}
+
+// RemoveAll ...
+func (q *Queue) RemoveAll() {
+	q.list.RemoveAll()
 }
 
 // Enqueue ...

@@ -8,7 +8,7 @@ type Set struct {
 	capacity int
 }
 
-func newSet(n int) *Set {
+func NewSet(n int) *Set {
 	s := &Set{
 		hash:     hashtable.NewHash(n),
 		capacity: n,
@@ -42,4 +42,9 @@ func (s *Set) Contains(item interface{}) bool {
 // Size ...
 func (s *Set) Size() int {
 	return s.hash.Size()
+}
+
+// RemoveAll ...
+func (s *Set) RemoveAll() {
+	s.hash.RemoveAll()
 }

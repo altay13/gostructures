@@ -130,6 +130,11 @@ func (h *Hash) Remove(key interface{}) interface{} {
 	return nil
 }
 
+// RemoveAll ...
+func (h *Hash) RemoveAll() {
+	h.list = make([]*hashElem, h.capacity)
+}
+
 // Size ...
 func (h *Hash) Size() int {
 	return h.size

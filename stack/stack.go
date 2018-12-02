@@ -42,15 +42,26 @@ func (s *Stack) Push(item interface{}) {
 
 // Pop method returns the item from the stack
 func (s *Stack) Pop() (interface{}, error) {
-	var item interface{}
-
-	if s.top >= 0 {
-		item = s.values[s.top]
-		s.values = append(s.values[:s.top], s.values[s.top+1:]...)
-		s.top--
-	} else {
+	if s.top < 0 {
 		return nil, fmt.Errorf("[ ERR ] Index out of range")
 	}
+
+	item := s.values[s.top]
+	s.values = append(s.values[:s.top], s.values[s.top+1:]...)
+	s.top--
+
+	return item, nil
+}
+
+// Peek method returns the top item from stack
+// without removing it
+func (s *Stack) Peek() (interface{}, error) {
+
+	if s.top < 0 {
+		return nil, fmt.Errorf("[ ERR ] Index out of range")
+	}
+
+	item := s.values[s.top]
 
 	return item, nil
 }

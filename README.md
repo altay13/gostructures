@@ -12,10 +12,11 @@
 * `Priority Queue`
 * `Binary Search Tree`
 * `Cartesian Tree`
-* `B-Tree`
+* `B-Tree Balanced Tree`
 * `Red-Black Tree`
 * `Splay Tree`
 * `AVL Tree`
 * `KD Tree`
 * `Trie`
 * `Knuth-Morris-Pratt` - https://web.stanford.edu/class/cs97si/10-string-algorithms.pdf
+* `Graph`
