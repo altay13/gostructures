@@ -22,3 +22,4 @@
 * `Graph`
 * `Ternary Search Tree`
 * `Disjoint sets`
+* `Binary Indexed Tree`
