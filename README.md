@@ -20,3 +20,5 @@
 * `Trie`
 * `Knuth-Morris-Pratt` - https://web.stanford.edu/class/cs97si/10-string-algorithms.pdf
 * `Graph`
+* `Ternary Search Tree`
+* `Disjoint sets`
