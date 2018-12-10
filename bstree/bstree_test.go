@@ -97,6 +97,29 @@ func TestBSTreeGetSortedArray(t *testing.T) {
 	}
 }
 
+func TestBSTreeGetSortedArrayOfKeys(t *testing.T) {
+	b := NewBSTree()
+
+	b.Put("C", 5)
+	b.Put("D", 7)
+	b.Put("A", 1)
+	b.Put("F", 14)
+	b.Put("E", 10)
+	b.Put("G", 18)
+	b.Put("B", 3)
+
+	var a []interface{}
+	b.GetSortedArrayOfKeys(&a)
+
+	res := [7]string{"A", "B", "C", "D", "E", "F", "G"}
+
+	for i := 0; i < len(res); i++ {
+		if res[i] != a[i] {
+			t.Errorf("Failed to sort. %d", a)
+		}
+	}
+}
+
 func TestBSTreeContains(t *testing.T) {
 	b := NewBSTree()
 

@@ -150,6 +150,19 @@ func (b *BSTree) GetSortedArray(res *[]interface{}) {
 	b.right.GetSortedArray(res)
 }
 
+// GetSortedArrayOfKeys ...
+func (b *BSTree) GetSortedArrayOfKeys(res *[]interface{}) {
+	if b.key == nil {
+		return
+	}
+
+	b.left.GetSortedArrayOfKeys(res)
+
+	*res = append(*res, b.key)
+
+	b.right.GetSortedArrayOfKeys(res)
+}
+
 // Contains ...
 func (b *BSTree) Contains(key interface{}) bool {
 	if reflect.TypeOf(key) != reflect.TypeOf(b.key) && b.key != nil {
