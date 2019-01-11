@@ -100,13 +100,13 @@ func TestBSTreeGetSortedArray(t *testing.T) {
 func TestBSTreeGetSortedArrayOfKeys(t *testing.T) {
 	b := NewBSTree()
 
-	b.Put("C", 5)
-	b.Put("D", 7)
-	b.Put("A", 1)
-	b.Put("F", 14)
-	b.Put("E", 10)
-	b.Put("G", 18)
-	b.Put("B", 3)
+	b.Put("A", 5.0)
+	b.Put("D", 5.5)
+	b.Put("C", 1.2)
+	b.Put("F", 14.4)
+	b.Put("E", 13.9)
+	b.Put("G", 18.0)
+	b.Put("B", 3.1)
 
 	var a []interface{}
 	b.GetSortedArrayOfKeys(&a)

@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/altay13/godatastructures/graph/matrix"
+	"github.com/altay13/gostructures/graph/matrix"
 )
 
 func main() {

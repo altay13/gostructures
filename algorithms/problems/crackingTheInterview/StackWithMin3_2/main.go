@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/altay13/godatastructures/stack"
+	"github.com/altay13/gostructures/stack"
 )
 
 // StackWithMin is a stack which also returns minimum element

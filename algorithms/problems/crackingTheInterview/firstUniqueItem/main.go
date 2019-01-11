@@ -7,9 +7,9 @@ import (
 	"os"
 	"strings"
 
-	"github.com/altay13/godatastructures/hashtable"
+	"github.com/altay13/gostructures/hashtable"
 
-	"github.com/altay13/godatastructures/set"
+	"github.com/altay13/gostructures/set"
 )
 
 type TestReader struct {

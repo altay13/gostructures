@@ -1,6 +1,6 @@
 package set
 
-import "github.com/altay13/godatastructures/hashtable"
+import "github.com/altay13/gostructures/hashtable"
 
 // Set ...
 type Set struct {

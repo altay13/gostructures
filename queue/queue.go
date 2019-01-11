@@ -3,7 +3,7 @@ package queue
 import (
 	"fmt"
 
-	"github.com/altay13/godatastructures/doublylinkedlist"
+	"github.com/altay13/gostructures/doublylinkedlist"
 )
 
 // Queue implementation

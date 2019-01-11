@@ -3,11 +3,11 @@ package matrix
 import (
 	"fmt"
 
-	"github.com/altay13/godatastructures/hashtable"
+	"github.com/altay13/gostructures/hashtable"
 
-	"github.com/altay13/godatastructures/set"
+	"github.com/altay13/gostructures/set"
 
-	"github.com/altay13/godatastructures/queue"
+	"github.com/altay13/gostructures/queue"
 )
 
 // Graph is the implementation of Graph
