@@ -169,11 +169,11 @@ func (b *BSTree) GetSortedFromLargest(res *[]interface{}) {
 		return
 	}
 
-	b.right.GetSortedArray(res)
+	b.right.GetSortedFromLargest(res)
 
 	*res = append(*res, b.value)
 
-	b.left.GetSortedArray(res)
+	b.left.GetSortedFromLargest(res)
 }
 
 // Contains ...
