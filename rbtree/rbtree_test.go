@@ -1,6 +1,8 @@
 package rbtree
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestRBTreeAdd(t *testing.T) {
 	tree := NewRBTree()
@@ -86,5 +88,25 @@ func TestRBTreeRemove(t *testing.T) {
 	v = tree.right.value
 	if v != "Item 14" {
 		t.Errorf("Failed to remove the node. Expected 'Item 14', instead %s", v)
+	}
+}
+
+func TestBSTreeTraverseTreeFromLargest(t *testing.T) {
+	b := NewRBTree()
+
+	b.Add(9, "dummy_1")
+	b.Add(3, "dummy_2")
+	b.Add(0, "dummy_3")
+	b.Add(5, "dummy_4")
+
+	var a []interface{}
+	b.TraverseTreeFromLargest(&a)
+
+	res := [4]string{"dummy_1", "dummy_4", "dummy_2", "dummy_3"}
+
+	for i := 0; i < len(res); i++ {
+		if res[i] != a[i] {
+			t.Errorf("Failed to sort. %s not equal to %s", string(res[i]), a[i].(string))
+		}
 	}
 }

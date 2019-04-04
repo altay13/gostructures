@@ -1,6 +1,7 @@
 package bstree
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -107,11 +108,13 @@ func TestBSTreeGetSortedFromLargest(t *testing.T) {
 	b.Put(-0.0020, "dummy_5")
 	b.Put(-0.0030, "dummy_6")
 	b.Put(-0.0040, "dummy_7")
+	b.Put(-0.0040, "dummy_8")
 
 	var a []interface{}
 	b.GetSortedFromLargest(&a)
 
 	res := [7]string{"dummy_4", "dummy_5", "dummy_2", "dummy_1", "dummy_6", "dummy_7", "dummy_3"}
+	fmt.Println(len(a), a)
 
 	for i := 0; i < len(res); i++ {
 		if res[i] != a[i] {
@@ -164,5 +167,31 @@ func TestBSTreeContains(t *testing.T) {
 
 	if b.Contains(100) {
 		t.Errorf("Failed to locate '100' key. Contains method fails. Should not find the '100' key.")
+	}
+}
+
+func TestBSTreeGetSortedFromLargestWithUniquenessFalse(t *testing.T) {
+	b := NewBSTree()
+	b.SetUniqueness(false)
+
+	b.Put(-0.0029, "dummy_1")
+	b.Put(-0.0023, "dummy_2")
+	b.Put(-0.0050, "dummy_3")
+	b.Put(-0.0015, "dummy_4")
+	b.Put(-0.0020, "dummy_5")
+	b.Put(-0.0030, "dummy_6")
+	b.Put(-0.0040, "dummy_7")
+	b.Put(-0.0040, "dummy_8")
+
+	var a []interface{}
+	b.GetSortedFromLargest(&a)
+
+	res := [8]string{"dummy_4", "dummy_5", "dummy_2", "dummy_1", "dummy_6", "dummy_8", "dummy_7", "dummy_3"}
+	fmt.Println(len(a), a)
+
+	for i := 0; i < len(res); i++ {
+		if res[i] != a[i] {
+			t.Errorf("Failed to sort. %s not equal to %s", string(res[i]), a[i].(string))
+		}
 	}
 }

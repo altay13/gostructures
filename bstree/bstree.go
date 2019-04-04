@@ -5,6 +5,10 @@ import (
 	"reflect"
 )
 
+var (
+	uniqueness = -1
+)
+
 // BSTree Binary Search Tree
 type BSTree struct {
 	key   interface{}
@@ -17,10 +21,18 @@ type BSTree struct {
 // NewBSTree Initiates Binary Search Tree
 func NewBSTree() *BSTree {
 	b := &BSTree{
-		left:  &BSTree{},
-		right: &BSTree{},
+		left:       &BSTree{},
+		right:      &BSTree{},
 	}
 	return b
+}
+
+func (b *BSTree) SetUniqueness(v bool) {
+	if v {
+		uniqueness = -1
+	} else {
+		uniqueness = 1
+	}
 }
 
 // Put ...
@@ -196,25 +208,25 @@ func (b BSTree) compare(it1 interface{}, it2 interface{}) int {
 		if it1.(string) > it2.(string) {
 			return 1
 		} else if it1.(string) == it2.(string) {
-			return -1
+			return uniqueness
 		}
 	case int:
 		if it1.(int) > it2.(int) {
 			return 1
 		} else if it1.(int) == it2.(int) {
-			return -1
+			return uniqueness
 		}
 	case float32:
 		if it1.(float32) > it2.(float32) {
 			return 1
 		} else if it1.(float32) == it2.(float32) {
-			return -1
+			return uniqueness
 		}
 	case float64:
 		if it1.(float64) > it2.(float64) {
 			return 1
 		} else if it1.(float64) == it2.(float64) {
-			return -1
+			return uniqueness
 		}
 	}
 	return 0

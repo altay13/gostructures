@@ -269,3 +269,16 @@ func (tree *RBTree) turnRight() {
 
 	*tree = *lTree
 }
+
+// GetSortedFromLargest ...
+func (tree *RBTree) TraverseTreeFromLargest(res *[]interface{}) {
+	if tree == nilNode {
+		return
+	}
+
+	tree.right.TraverseTreeFromLargest(res)
+
+	*res = append(*res, tree.value)
+
+	tree.left.TraverseTreeFromLargest(res)
+}
