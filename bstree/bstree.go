@@ -188,6 +188,19 @@ func (b *BSTree) GetSortedFromLargest(res *[]interface{}) {
 	b.left.GetSortedFromLargest(res)
 }
 
+// GetSortedKeysFromLargest ...
+func (b *BSTree) GetSortedKeysFromLargest(res *[]interface{}) {
+	if b.key == nil {
+		return
+	}
+
+	b.right.GetSortedKeysFromLargest(res)
+
+	*res = append(*res, b.key)
+
+	b.left.GetSortedKeysFromLargest(res)
+}
+
 // Contains ...
 func (b *BSTree) Contains(key interface{}) bool {
 	if reflect.TypeOf(key) != reflect.TypeOf(b.key) && b.key != nil {
